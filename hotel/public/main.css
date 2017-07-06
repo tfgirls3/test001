@@ -1,0 +1,6 @@
+body{
+	background-color: pink!important;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
