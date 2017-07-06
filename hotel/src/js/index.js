@@ -1,5 +1,5 @@
-import '../css/style.css';
-import '../js/hmr.js';
+import '../css/index.css';
+import './hmr.js';
 import 'jquery';
 import 'bootstrap';
 import 'bootstrap-loader';
