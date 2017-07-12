@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+	</head>
+	<body ng-app="app" ng-controller="cro">
+		<!--导航-->
+		<div class="navs">
+			<span class="name"><b>KITCHEN</b></span>
+			<button class="btn btn-default"  type="button">历史订单</button>
+		</div>
+		<div class="main">
+			<div class="main-left col-md-2">
+				<nav class="nav nav-tabs">				
+					<ul class="nav nav-stacked" style="clear: both;">						
+						<li><a href="#a1" data-toggle="tab">一号桌</a></li>					
+						<li><a href="#a2" data-toggle="tab">二号桌</a></li>					
+						<li><a href="#a3" data-toggle="tab">三号桌</a></li>					
+						<li><a href="#a4" data-toggle="tab">四号桌</a></li>					
+						<li><a href="#a5" data-toggle="tab">五号桌</a></li>
+					</ul>				
+				</nav>				
+			</div>
+			<div class="main-right">
+				<div class="tab-content">
+					<div class="tab-pane fade in active" id="a1">
+						<table class="table table-hover table-condensed">
+							<tr>
+								<td>ORDER</td>
+								<td>NAME</td>
+								<td>PICTURE</td>
+								<td>NUMBER</td>
+								<td>STATE</td>
+							</tr>
+							<tr ng-repeat="x in list">
+								<td>{{x.middle_id}}</td>
+								<td>{{x.menu_name}}</td>
+								<td><img ng-src="{{x.img}}"/></td>
+								<td><span>{{x.num}}</span></td>
+								<td><button class="btn btn-default btns" ng-click="deleteTr()">完成</button></td>
+							</tr>							
+						</table>
+					</div>
+					<div class="tab-pane" id="a2">
+						第二页
+					</div>
+					<div class="tab-pane" id="a3">
+						第三页
+					</div>
+					<div class="tab-pane" id="a4">
+						第四页
+					</div>
+					<div class="tab-pane" id="a5">
+						第五页
+					</div>	
+				</div>			
+			</div>
+		</div>
+		<script src="/socket.io/socket.io.js" type="text/javascript" charset="utf-8"></script>		
+	</body>
+	<script type="text/javascript">
+		var app = angular.module('app',[]);
+		app.controller('cro',['$scope','$http',function($scope,$http){
+			var url = '/kitchen/selectList';
+			var data = {};
+			$http.post(url,data).then(function(result){
+				console.log(result.data.list);
+				$scope.list=result.data.list;
+			})
+			$scope.deleteTr=function(){
+				alert($(this).index());
+//				if($('.btns').html()=='完成'){					
+//					$('.btns').parent().parent().css('background-color','black');
+//					$('.btns').html('已完成');
+//				}else{
+//					$('.btns').parent().parent().css('background-color','');
+//					$('.btns').html('完成');
+//				}
+			}
+		}])
+	</script>
+</html>

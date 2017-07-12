@@ -16,10 +16,15 @@ var plugins=setPlugins(files);
 
 module.exports={
 	entry:entry,
+	resolve: {
+	    alias: {
+	      'vue$': 'vue/dist/vue.esm.js' // 'vue/dist/vue.common.js' for webpack 1
+	    }
+	},
 	output:{
 		filename:'js/[name]-bundle.js',
 		path:__dirname+'/public',
-		publicPath:'http://10.10.10.35:3000'
+		publicPath:'http://localhost:3000'
 	},
 	module:{
 			//通过url-loader解析以上后缀的文件 
@@ -34,6 +39,10 @@ module.exports={
 				{ 
 					test: require.resolve("jquery"), 
 					loader: "expose-loader?$!expose-loader?jQuery"
+				},
+				{
+					test:/\.vue$/,
+					loader: 'vue-loader'
 				},
 				{
 					test:/\.js$/,

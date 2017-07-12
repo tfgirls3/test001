@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body ng-app="app" ng-controller="con"> 
+		<div class="navs">
+			<span class="bar"><b>BAR</b></span>
+			<span><a class="history" href="history">历史订单</a></span>
+			<!--<button class="btn btn-default history" ng-click="dianji()"></button>-->
+		</div>
+		<div class="main">
+			<div class="main-left col-md-2">
+				<nav class="nav nav-tabs">				
+					<ul class="nav nav-tabs" style="clear: both;">
+						<li>
+							<a href="#a1" data-toggle="tab"><div></div>01</a>
+						</li>					
+						<li>
+							<a href="#a2" data-toggle="tab"><div></div>02</a>
+						</li>
+						<li>
+							<a href="#a3" data-toggle="tab"><div></div>03</a>
+						</li>
+						<li>
+							<a href="#a4" data-toggle="tab"><div></div>04</a>
+						</li>
+						<li>
+							<a href="#a5" data-toggle="tab"><div></div>05</a>
+						</li>
+						<li>
+							<a href="#a6" data-toggle="tab"><div></div>06</a>
+						</li>
+						<li>
+							<a href="#a7" data-toggle="tab"><div></div>07</a>
+						</li>
+						<li>
+							<a href="#a8" data-toggle="tab"><div></div>08</a>
+						</li>
+						<li>
+							<a href="#a9" data-toggle="tab"><div></div>09</a>
+						</li>
+						<li>
+							<a href="#a10" data-toggle="tab"><div></div>10</a>
+						</li>
+					</ul>				
+				</nav>				
+			</div>
+			<div class="main-right">
+				<div class="tab-content">
+					<div class="tab-pane fade in active" id="a1">
+						<table class="table table-hover table-condensed">
+							<tr>
+								<td>ORDER</td>
+								<td>NAME</td>
+								<td>NUMBER</td>
+								<td>PRICE</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>俄式土豆泥</td>
+								<td><a href="#">1</a></td>
+								<td>$28.00</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>俄式烤奶汁杂拌</td>
+								<td><a href="#">2</a></td>
+								<td>$28.00</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>俄式酥炸大虾</td>
+								<td><a href="#">3</a></td>
+								<td>$28.00</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>咖喱牛肉烩饭</td>
+								<td><a href="#">2</a></td>
+								<td>$28.00</td>
+							</tr>
+							<tr>
+								<td>total :</td>
+								<td colspan="3">$888.00</td>
+							</tr>
+							<tr>
+								<td>seat :</td>
+								<td colspan="3">01</td>
+							</tr>
+						</table>
+					</div>
+					<div class="tab-pane" id="a2">
+						page2
+					</div>
+					<div class="tab-pane" id="a3">
+						page3
+					</div>
+					<div class="tab-pane" id="a4">
+						page4
+					</div>
+					<div class="tab-pane" id="a5">
+						page5
+					</div>	
+				</div>			
+			</div>
+		</div>
+		<script src="/socket.io/socket.io.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

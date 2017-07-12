@@ -1,0 +1,77 @@
+body{
+	background-image: url(/img/banner2.jpg);
+	background-size: 100%;
+}
+a{
+	text-decoration: none;
+}
+ul{
+	list-style: none;
+}
+.navs{
+	width: 100%;
+	height: 80px;
+}
+.navs .bar{
+	font-size: 50px;
+	color: #000000;
+	font-family: -webkit-pictograph;
+	margin-left: 45%;
+}
+#myTab {
+	margin-left: 20px;
+}
+#myTab a{
+	text-decoration: none;
+	color: white;
+}
+.nav-tabs > li.active > a:focus {
+    color: #555555!important;
+}
+.tab-content > .tab-pane {
+ display: none;
+}
+.tab-content > .active {
+ display: block;
+}
+.main{
+	width:100%;
+	margin-left: 20px;
+	display: flex;
+}
+.main .main-left img{
+	width: 100px;
+	height: 100px;
+	margin-top: 30px;
+}
+.main .main-left{
+	width: 65%;
+	display: flex;
+	justify-content: space-around;
+	flex-shrink: 0;
+	flex-wrap: wrap;
+	margin-right: 20px;
+}
+.main .main-left label{
+	width: 20%;
+	text-align: center;
+}
+.main .main-left input{
+	display: none;
+}
+.main .main-right{
+	width: 30%;
+	font-size: 20px;
+	font-weight: bold;
+	font-family: "华文隶书";
+	float: right;
+	margin-top: 36px;
+}
+.main .main-right table{
+	background-color: #FFFFFF;
+	background: rgba(0,0,0,0.1);
+}
+.main .main-right table td{
+	text-align: center;
+	
+}

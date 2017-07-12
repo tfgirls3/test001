@@ -7,7 +7,8 @@ var bodyParser = require('body-parser');
 var ejs = require('ejs');
 
 var index = require('./routes/index');
-
+var kitchen = require('./routes/kitchen');
+var bar = require('./routes/bar');
 var app = express();
 
 // view engine setup
@@ -24,7 +25,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-
+app.use('/kitchen',kitchen);
+app.use('/bar',bar);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

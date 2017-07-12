@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<link href="http://localhost:3000/css/menu.css" rel="stylesheet"></head>
+	<body ng-app="app" ng-controller="con"> 
+		<div class="navs">
+			<span class="bar"><b>MENU</b></span>
+		</div>
+		<div class="main">
+			<div class="main-left">
+				<ul id="myTab" class="nav nav-pills nav-justified" role="tablist">
+					<li class="active"><a href="#zhuCai" role="tab" data-toggle="tab">主菜</a></li>
+					<li><a href="#zhuShi" role="tab" data-toggle="tab">主食</a></li>
+					<li><a href="#niuPa" role="tab" data-toggle="tab">牛扒</a></li>
+					<li><a href="#nongTang" role="tab" data-toggle="tab">浓汤</a></li>
+					<li><a href="#tianPin" role="tab" data-toggle="tab">甜品</a></li>
+					<li><a href="#shaLa" role="tab" data-toggle="tab">沙拉</a></li>
+					<li><a href="#xiaoShi" role="tab" data-toggle="tab">小食</a></li>
+					<li><a href="#yinPin" role="tab" data-toggle="tab">饮品</a></li>
+				</ul>
+				<div id="myTabContent" class="tab-content">				
+					<div class="tab-pane active" id="zhuCai" >
+						<template v-for="cai in list">
+							<label v-bind:for="'a'+cai.index" >
+								<input type="checkbox" name="caiming" v-bind:id="'a'+cai.index" @click="jiSuan(cai.index)"  v-bind:value="cai.id" v-model="cai.checked"/>
+								<div>
+									<img v-bind:src="cai.img"/>
+									<p>{{cai.name}}</p>
+									<p>价格:{{cai.sal}}</p>
+								</div>
+							</label>
+						</template>
+						<div id="total">
+							总价:{{total}}
+							<input type="hidden" name="total" id="total" v-bind:value="total" />
+						</div>
+					</div>
+					<div class="tab-pane" id="zhuShi">
+						<template v-for="cai1 in list">
+							<label v-bind:for="'a'+cai1.index" >
+								<input type="checkbox" name="caiming1" v-bind:id="'a'+cai1.index" @click="jiSuan(cai1.index)"  v-bind:value="cai1.id" v-model="cai1.checked"/>
+								<div>
+									<img v-bind:src="cai1.img"/>
+									<p>{{cai1.name}}</p>
+									<p>价格:{{cai1.sal}}</p>
+								</div>
+							</label>
+						</template>
+						<div id="total1">
+							总价:{{total1}}
+							<input type="hidden" name="total1" id="total1" v-bind:value="total1" />
+						</div>
+					</div>
+					<div class="tab-pane" id="niuPa">
+						<template v-for="cai2 in list">
+							<label v-bind:for="'a'+cai2.index" >
+								<input type="checkbox" name="caiming2" v-bind:id="'a'+cai2.index" @click="jiSuan(cai2.index)"  v-bind:value="cai2.id" v-model="cai2.checked"/>
+								<div>
+									<img v-bind:src="cai2.img"/>
+									<p>{{cai2.name}}</p>
+									<p>价格:{{cai2.sal}}</p>
+								</div>
+							</label>
+						</template>
+						<div id="total2">
+							总价:{{total2}}
+							<input type="hidden" name="total2" id="total2" v-bind:value="total2" />
+						</div>
+					</div>
+						<div class="tab-pane" id="nongTang">hh1</div>
+						<div class="tab-pane" id="tianPin">dd</div>
+						<div class="tab-pane" id="shaLa">ww</div>
+						<div class="tab-pane" id="xiaoShi">ww</div>
+						<div class="tab-pane" id="yinPin">ww</div>
+				</div>
+			</div>
+			<div class="tab-content main-right" id="already">
+				<div class="tab-pane fade in active" id="a1">
+					<table class="table table-hover table-condensed">
+						<tr>
+							<td>ORDER</td>
+							<td>NAME</td>
+							<td>NUMBER</td>
+							<td>PRICE</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>俄式土豆泥</td>
+							<td><a href="#">1</a></td>
+							<td>$28.00</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>俄式烤奶汁杂拌</td>
+							<td><a href="#">2</a></td>
+							<td>$28.00</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>俄式酥炸大虾</td>
+							<td><a href="#">3</a></td>
+							<td>$28.00</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>咖喱牛肉烩饭</td>
+							<td><a href="#">2</a></td>
+							<td>$28.00</td>
+						</tr>
+						<tr>
+							<td>total :</td>
+							<td colspan="3">$888.00</td>
+						</tr>
+						<tr>
+							<td>seat :</td>
+							<td colspan="3">01</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<script src="/socket.io/socket.io.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="http://localhost:3000/js/menu-bundle.js"></script></body>
+</html>
