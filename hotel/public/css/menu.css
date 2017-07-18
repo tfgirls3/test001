@@ -1,5 +1,5 @@
-body{
-	background-image: url(/img/banner2.jpg);
+body{	
+	background-image: url(/img/背景.jpg);
 	background-size: 100%;
 }
 a{
@@ -19,11 +19,18 @@ ul{
 	margin-left: 45%;
 }
 #myTab {
-	margin-left: 20px;
+	height : 40px;
+	margin-left: 6px;
+	font-family: "\534E\6587\96B6\4E66";
+	font-size: 22px;
 }
 #myTab a{
 	text-decoration: none;
 	color: white;
+}
+#myTabContent{
+	margin-left:50px;
+	margin-top : 30px;
 }
 .nav-tabs > li.active > a:focus {
     color: #555555!important;
@@ -34,6 +41,15 @@ ul{
 .tab-content > .active {
  display: block;
 }
+.tab-pane > div{
+	width: 150px;
+	height: 180px;
+	display: inline-block;
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+	font-family: "\534E\6587\96B6\4E66";
+}
 .main{
 	width:100%;
 	margin-left: 20px;
@@ -41,38 +57,236 @@ ul{
 	display: -ms-flexbox;
 	display: flex;
 }
+.main .main-left .tu{
+	position :relative;
+}
+.main .main-left .tu span{
+	position: absolute;
+	left: 100px;
+	top: 74px;
+}
 .main .main-left img{
 	width: 100px;
 	height: 100px;
-	margin-top: 30px;
+	margin: auto;
 }
 .main .main-left{
-	width: 65%;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-pack: distribute;
-	    justify-content: space-around;
-	-ms-flex-negative: 0;
-	    flex-shrink: 0;
-	-ms-flex-wrap: wrap;
-	    flex-wrap: wrap;
+	width: 60%;
 	margin-right: 20px;
 }
-.main .main-left label{
-	width: 20%;
-	text-align: center;
+.main .main-left .banner{
+	width: 100%;
+	margin-top: 30px;
+	-webkit-animation-name: diao;
+	        animation-name: diao;
+	-webkit-animation-duration: 2s;
+	        animation-duration: 2s;
+	-webkit-animation-fill-mode: forwards;
+	        animation-fill-mode: forwards;
 }
-.main .main-left input{
-	display: none;
+@-webkit-keyframes diao{
+	from{-webkit-transform:translate(0px,-200px);transform:translate(0px,-200px);}
+	to{-webkit-transform:translate(0px,100px);transform:translate(0px,100px);}
+}
+@keyframes diao{
+	from{-webkit-transform:translate(0px,-200px);transform:translate(0px,-200px);}
+	to{-webkit-transform:translate(0px,100px);transform:translate(0px,100px);}
+}
+.main .main-left .logo{
+	width: 150px;
+	height: 150px;
+	
+}
+.main .main-left .logo>img{
+	width: 150px;
+	height: 150px;
+	display: inline-block;
+	-webkit-animation-name: img;
+	        animation-name: img;
+	-webkit-animation-duration: 1s;
+	        animation-duration: 1s;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	        animation-iteration-count: infinite;
+}
+@-webkit-keyframes img{
+	from{-webkit-transform: translate(0px,-20px) rotateY(0deg);transform: translate(0px,-20px) rotateY(0deg);}
+	to{-webkit-transform: translate(0px,-20px) rotateY(360deg);transform: translate(0px,-20px) rotateY(360deg);}
+}
+.main .main-left .welcome{
+	font-size: 70px;
+	color: #4D4D4D;
+	text-shadow: 5px 5px 3px darkgray;
+	display: inline-block;
+}
+.banner span:nth-child(2){
+    -webkit-animation-name: tiao;
+            animation-name: tiao;
+    -webkit-animation-delay: 2s;
+            animation-delay: 2s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;	
+    -webkit-animation-timing-function: linear;	
+            animation-timing-function: linear;		
+}
+.banner span:nth-child(3){
+	-webkit-animation-name: tiao;
+	        animation-name: tiao;
+	-webkit-animation-iteration-count: infinite;
+	        animation-iteration-count: infinite;
+	-webkit-animation-duration: 1s;
+	        animation-duration: 1s;	
+	-webkit-animation-delay: 2.3s;	
+	        animation-delay: 2.3s;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;		
+}
+.banner span:nth-child(4){
+    -webkit-animation-name: tiao;
+            animation-name: tiao;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;	
+    -webkit-animation-delay: 2.6s;	
+            animation-delay: 2.6s;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;		
+}
+.banner span:nth-child(5){
+    -webkit-animation-name: tiao;
+            animation-name: tiao;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;	
+    -webkit-animation-delay: 2.9s;	
+            animation-delay: 2.9s;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;		
+}
+.banner span:nth-child(6){
+    -webkit-animation-name: tiao;
+            animation-name: tiao;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;	
+    -webkit-animation-delay: 3.2s;	
+            animation-delay: 3.2s;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;		
+}
+.banner span:nth-child(7){
+    -webkit-animation-name: tiao;
+            animation-name: tiao;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;	
+    -webkit-animation-delay: 3.5s;	
+            animation-delay: 3.5s;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;		
+}
+.banner span:nth-child(8){
+    -webkit-animation-name: tiao;
+            animation-name: tiao;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;	
+    -webkit-animation-delay: 3.8s;	
+            animation-delay: 3.8s;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;		
+}
+.banner span:nth-child(9){
+    -webkit-animation-name: tiao;
+            animation-name: tiao;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;	
+    -webkit-animation-delay: 4.1s;	
+            animation-delay: 4.1s;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;		
+}
+.banner span:nth-child(10){
+    -webkit-animation-name: tiao;
+            animation-name: tiao;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;	
+    -webkit-animation-delay: 4.4s;	
+            animation-delay: 4.4s;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;		
+}
+.banner span:nth-child(11){
+    -webkit-animation-name: tiao;
+            animation-name: tiao;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;	
+    -webkit-animation-delay: 4.7s;	
+            animation-delay: 4.7s;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;		
+}
+.banner span:nth-child(12){
+    -webkit-animation-name: tiao;
+            animation-name: tiao;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;	
+    -webkit-animation-delay: 5.0s;	
+            animation-delay: 5.0s;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;		
+}
+.banner span:nth-child(13){
+    -webkit-animation-name: tiao;
+            animation-name: tiao;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;	
+    -webkit-animation-delay: 5.3s;	
+            animation-delay: 5.3s;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;		
+}
+@-webkit-keyframes tiao{
+	from{-webkit-transform: translate(0px,0px);transform: translate(0px,0px);}
+	to{-webkit-transform: translate(0px,-30px);transform: translate(0px,-30px);}
+}
+@keyframes tiao{
+	from{-webkit-transform: translate(0px,0px);transform: translate(0px,0px);}
+	to{-webkit-transform: translate(0px,-30px);transform: translate(0px,-30px);}
 }
 .main .main-right{
-	width: 30%;
+	width: 35%;
 	font-size: 20px;
 	font-weight: bold;
 	font-family: "\534E\6587\96B6\4E66";
 	float: right;
 	margin-top: 36px;
+}
+.main .main-right select{
+	background-color: darkgrey;
+	color:white;
+}
+.main .main-right .total{
+	float:right;
+	display: none;
 }
 .main .main-right table{
 	background-color: #FFFFFF;
@@ -80,5 +294,21 @@ ul{
 }
 .main .main-right table td{
 	text-align: center;
-	
+}
+.toBar{
+	float: right;
+	color: black;
+	display: inline-block;
+	height: 30px;
+	width: 180px;
+	background-color: whitesmoke;
+	text-decoration: none;
+	text-align: center;
+	line-height: 30px;
+	border-radius: 3px;
+	font-family:'\534E\6587\96B6\4E66';
+	font-size: 20px;
+	position: fixed;
+	top: 50px;
+	left:1180px;
 }

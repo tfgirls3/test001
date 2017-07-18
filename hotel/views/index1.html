@@ -5,14 +5,14 @@
 		<title></title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 	<link href="http://localhost:3000/css/index1.css" rel="stylesheet"></head>
-	<body>
+	<body ng-app="app" ng-controller="cro">
 		<!--banner-->
 		<div class="banner">
 			<div class="banner-info">
 				<div class="container">
 					<div class="logo">
 						<div class="ribbon">
-							<div class="ribbon-fold"><h1> <a href="index.html">Pizza</a></h1></div>
+							<div class="ribbon-fold"><h1> <a href="index.html">N</a>&sup2;</h1></div>
 						</div>
 						<h2>Better Ingredients better Pizza</h2>
 					</div>			
@@ -47,7 +47,7 @@
 		<div class="banner-bottom">
 			<div class="container">
 				<div class="banner-text">
-					<h3>Tasty Italian Pizza</h3>
+					<h3>Menu</h3>
 					<p>Special Offer to day</p>
 					<a href="menu" class="btn btn-1 btn-1b">More+</a>
 				</div>
@@ -58,12 +58,12 @@
 					<div class="welcome-info">
 						<div class="col-md-6 welcome-grids">
 							<div class="welcome-img">
-								<img src="/img/img1.jpg" class="img-responsive zoom-img" alt=""/>
+								<img src="/img/带骨眼排.jpg" class="img-responsive zoom-img" alt=""/>
 							</div>
 						</div>
 						<div class="col-md-6 welcome-grids">
 							<div class="welcome-img">
-								<img src="/img/img2.jpg" class="img-responsive zoom-img" alt=""/>
+								<img src="/img/红酒牛排.jpg" class="img-responsive zoom-img" alt=""/>
 							</div>
 						</div>
 						<div class="clearfix"> </div>
@@ -77,39 +77,39 @@
 		<!--services-->
 		<div class="services">
 			<div class="container">
-				<h3>SORT</h3>
+				<h1>SORT</h1>
 				<div class="servc-grids">
 					<div class="col-md-3 servc-grid">						
-						<div class="servc-icon hi-icon-effect-8">
+						<div class="servc-icon hi-icon-effect-8" ng-click="xuanZe($event)">
 							<a href="#collapseOne" data-toggle="collapse" class="hi-icon hi-icon-archive">
 								<span class="glyphicon glyphicon-flash" aria-hidden="true"></span>
 							</a>
 						</div>
-						<h4>热销菜品</h4>
+						<h2>热销</h2>
 					</div>					
 					<div class="col-md-3 servc-grid">
-						<div class="servc-icon hi-icon-effect-8">
+						<div class="servc-icon hi-icon-effect-8"  ng-click="xuanZe($event)">
 							<a href="#collapseTwo" data-toggle="collapse" data-parent="#accordion" class="hi-icon hi-icon-archive">
 								<span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
 							</a>
 						</div>
-						<h4>优惠菜品</h4>
+						<h2>优惠</h2>
 					</div>
 					<div class="col-md-3 servc-grid">
-						<div class="servc-icon hi-icon-effect-8">
+						<div class="servc-icon hi-icon-effect-8"  ng-click="xuanZe($event)">
 							<a href="#collapseThree" data-toggle="collapse" data-parent="#accordion" class="hi-icon hi-icon-archive">
 								<span class="glyphicon glyphicon glyphicon-fire" aria-hidden="true"></span>
 							</a>
 						</div>
-						<h4>情侣套餐</h4>
+						<h2>情侣</h2>
 					</div>
 					<div class="col-md-3 servc-grid">
-						<div class="servc-icon hi-icon-effect-8">
+						<div class="servc-icon hi-icon-effect-8"  ng-click="xuanZe($event)">
 							<a href="#collapseFour" data-toggle="collapse" data-parent="#accordion" class="hi-icon hi-icon-archive">
 								<span class="glyphicon glyphicon glyphicon-heart" aria-hidden="true"></span>
 							</a>
 						</div>
-						<h4>新品上架</h4>
+						<h2>新品</h2>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
@@ -118,29 +118,15 @@
 						<div class="panel-body">
 							<table class="table table-hover table-condensed">
 								<tr>
-									<td>ORDER</td>
 									<td>NAME</td>
 									<td>PICTURE</td>
 									<td>MONEY</td>
 								</tr>
-								<tr>
-									<td>1</td>
-									<td>俄式土豆泥</td>
-									<td><img src="/img/俄式土豆泥.jpg"/></td>
-									<td>$50</td>
-								</tr>
-								<tr>
-									<td>2</td>
-									<td>俄式烤奶汁杂拌</td>
-									<td><img src="/img/俄式烤奶汁杂拌.jpg"/></td>
-									<td>$33</td>
-								</tr>
-								<tr>
-									<td>3</td>
-									<td>俄式酥炸大虾</td>
-									<td><img src="/img/俄式酥炸大虾.jpg"/></td>
-									<td>$45</td>
-								</tr>								
+								<tr ng-repeat="x in list">
+									<td>{{x.menu_name}}</td>
+									<td><img ng-src="{{x.img}}"/></td>
+									<td>${{x.price}}</td>
+								</tr>									
 							</table>
 						</div>					
 					</div>
@@ -148,28 +134,14 @@
 						<div class="panel-body">
 							<table class="table table-hover table-condensed">
 								<tr>
-									<td>ORDER</td>
 									<td>NAME</td>
 									<td>PICTURE</td>
 									<td>MONEY</td>
 								</tr>
-								<tr>
-									<td>1</td>
-									<td>俄式土豆泥</td>
-									<td><img src="/img/俄式土豆泥.jpg"/></td>
-									<td>$50</td>
-								</tr>
-								<tr>
-									<td>2</td>
-									<td>俄式烤奶汁杂拌</td>
-									<td><img src="/img/俄式烤奶汁杂拌.jpg"/></td>
-									<td>$33</td>
-								</tr>
-								<tr>
-									<td>3</td>
-									<td>俄式酥炸大虾</td>
-									<td><img src="/img/俄式酥炸大虾.jpg"/></td>
-									<td>$45</td>
+								<tr ng-repeat="x in list">
+									<td>{{x.menu_name}}</td>
+									<td><img ng-src="{{x.img}}"/></td>
+									<td>${{x.price}}</td>
 								</tr>								
 							</table>
 						</div>					
@@ -178,29 +150,15 @@
 						<div class="panel-body">
 							<table class="table table-hover table-condensed">
 								<tr>
-									<td>ORDER</td>
 									<td>NAME</td>
 									<td>PICTURE</td>
-									<td>MONEY</td>
+									<td>MONEY</td>									
 								</tr>
-								<tr>
-									<td>1</td>
-									<td>俄式土豆泥</td>
-									<td><img src="/img/俄式土豆泥.jpg"/></td>
-									<td>$50</td>
-								</tr>
-								<tr>
-									<td>2</td>
-									<td>俄式烤奶汁杂拌</td>
-									<td><img src="/img/俄式烤奶汁杂拌.jpg"/></td>
-									<td>$33</td>
-								</tr>
-								<tr>
-									<td>3</td>
-									<td>俄式酥炸大虾</td>
-									<td><img src="/img/俄式酥炸大虾.jpg"/></td>
-									<td>$45</td>
-								</tr>								
+								<tr ng-repeat="x in list">
+									<td>{{x.menu_name}}</td>
+									<td><img src="{{x.img}}"/></td>
+									<td>${{x.price}}</td>
+								</tr>							
 							</table>
 						</div>					
 					</div>
@@ -208,29 +166,15 @@
 						<div class="panel-body">
 							<table class="table table-hover table-condensed">
 								<tr>
-									<td>ORDER</td>
 									<td>NAME</td>
 									<td>PICTURE</td>
 									<td>MONEY</td>
 								</tr>
-								<tr>
-									<td>1</td>
-									<td>俄式土豆泥</td>
-									<td><img src="/img/俄式土豆泥.jpg"/></td>
-									<td>$50</td>
-								</tr>
-								<tr>
-									<td>2</td>
-									<td>俄式烤奶汁杂拌</td>
-									<td><img src="/img/俄式烤奶汁杂拌.jpg"/></td>
-									<td>$33</td>
-								</tr>
-								<tr>
-									<td>3</td>
-									<td>俄式酥炸大虾</td>
-									<td><img src="/img/俄式酥炸大虾.jpg"/></td>
-									<td>$45</td>
-								</tr>								
+								<tr ng-repeat="x in list">
+									<td>{{x.menu_name}}</td>
+									<td><img src="{{x.img}}"/></td>
+									<td>${{x.price}}</td>
+								</tr>							
 							</table>
 						</div>					
 					</div>
@@ -238,369 +182,11 @@
 			</div>
 		</div>
 		<!--services结束-->
-		<!--menu-->
-		<div class="menu">
-			<div class="container">
-				<div class="menu-tag">
-					<h3 class="title">The Menu</h3>
-				</div>
-				<div class="load_more">	
-					<ul id="myList">
-						<li>
-							<div class="l_g">
-								<div class="l_g_r">
-									<div class="col-md-6 menu-grids">
-										<div class="menu-text">
-											<div class="menu-text-left">
-												<h4>Voluptate cillum fugiat.</h4>
-												<h6>Cheese, tomato, mushrooms, onions.</h6>
-											</div>
-											<div class="menu-text-midle">
-												<span class="line"> </span>
-											</div>
-											<div class="menu-text-right">
-												<h4>$ 50</h4>
-											</div>
-											<div class="clearfix"> </div>
-										</div>	
-										<div class="menu-text">
-											<div class="menu-text-left">
-												<h4>Metus varius laoreet.</h4>
-												<h6>Chicken, mozzarella cheese, onions.</h6>
-											</div>
-											<div class="menu-text-midle">
-												<span class="line"> </span>
-											</div>
-											<div class="menu-text-right">
-												<h4>$62</h4>
-											</div>
-											<div class="clearfix"> </div>
-										</div>
-										<div class="menu-text">
-											<div class="menu-text-left">
-												<h4>Donec sodales magna.</h4>
-												<h6>Tuna, Sweetcorn, Cheese.</h6>
-											</div>
-											<div class="menu-text-midle">
-												<span class="line"> </span>
-											</div>
-											<div class="menu-text-right">
-												<h4>$25</h4>
-											</div>
-											<div class="clearfix"> </div>
-										</div>
-										<div class="menu-text">
-											<div class="menu-text-left">
-												<h4>Saugue velit cursus.</h4>
-												<h6>Pineapple, Minced Beef, Cheese.</h6>
-											</div>
-											<div class="menu-text-midle">
-												<span class="line"> </span>
-											</div>
-											<div class="menu-text-right">
-												<h4>$30</h4>
-											</div>
-											<div class="clearfix"> </div>
-										</div>
-									</div>
-									<div class="col-md-6 menu-grids">
-										<div class="menu-text">
-											<div class="menu-text-left">
-												<h4>Arcu pede enim justo.</h4>
-												<h6>Tuna, Sweetcorn, Cheese.</h6>
-											</div>
-											<div class="menu-text-midle">
-												<span class="line"> </span>
-											</div>
-											<div class="menu-text-right">
-												<h4>$50</h4>
-											</div>
-											<div class="clearfix"> </div>
-										</div>	
-										<div class="menu-text">
-											<div class="menu-text-left">
-												<h4>Cras dapibussemper nisi.</h4>
-												<h6>Pineapple, Minced Beef, Cheese.</h6>
-											</div>
-											<div class="menu-text-midle">
-												<span class="line"> </span>
-											</div>
-											<div class="menu-text-right">
-												<h4>$62</h4>
-											</div>
-											<div class="clearfix"> </div>
-										</div>
-										<div class="menu-text">
-											<div class="menu-text-left">
-												<h4>Quam semper libero.</h4>
-												<h6>Cheese, tomato, mushrooms, onions.</h6>
-											</div>
-											<div class="menu-text-midle">
-												<span class="line"> </span>
-											</div>
-											<div class="menu-text-right">
-												<h4>$25</h4>
-											</div>
-											<div class="clearfix"> </div>
-										</div>
-										<div class="menu-text">
-											<div class="menu-text-left">
-												<h4>Nam eget dui Etiam.</h4>
-												<h6>Chicken, mozzarella cheese, onions.</h6>
-											</div>
-											<div class="menu-text-midle">
-												<span class="line"> </span>
-											</div>
-											<div class="menu-text-right">
-												<h4>$30</h4>
-											</div>
-											<div class="clearfix"> </div>
-										</div>
-									</div>
-									<div class="clearfix"> </div>
-								</div> 
-							</div>	
-						</li>
-						<li><div class="l_g">
-								<div class="l_g_r g_r">
-									<div class="col-md-6 menu-grids">
-										<div class="menu-text">
-											<div class="menu-text-left">
-												<h4>Voluptate cillum fugiat.</h4>
-												<h6>Cheese, tomato, mushrooms, onions.</h6>
-											</div>
-											<div class="menu-text-midle">
-												<span class="line"> </span>
-											</div>
-											<div class="menu-text-right">
-												<h4>$50</h4>
-											</div>
-											<div class="clearfix"> </div>
-										</div>	
-										<div class="menu-text">
-											<div class="menu-text-left">
-												<h4>Metus varius laoreet.</h4>
-												<h6>Chicken, mozzarella cheese, onions.</h6>
-											</div>
-											<div class="menu-text-midle">
-												<span class="line"> </span>
-											</div>
-											<div class="menu-text-right">
-												<h4>$62</h4>
-											</div>
-											<div class="clearfix"> </div>
-										</div>
-										<div class="menu-text">
-											<div class="menu-text-left">
-												<h4>Donec sodales magna.</h4>
-												<h6>Tuna, Sweetcorn, Cheese.</h6>
-											</div>
-											<div class="menu-text-midle">
-												<span class="line"> </span>
-											</div>
-											<div class="menu-text-right">
-												<h4>$25</h4>
-											</div>
-											<div class="clearfix"> </div>
-										</div>
-										<div class="menu-text">
-											<div class="menu-text-left">
-												<h4>Saugue velit cursus.</h4>
-												<h6>Pineapple, Minced Beef, Cheese.</h6>
-											</div>
-											<div class="menu-text-midle">
-												<span class="line"> </span>
-											</div>
-											<div class="menu-text-right">
-												<h4>$30</h4>
-											</div>
-											<div class="clearfix"> </div>
-										</div>
-									</div>
-									<div class="col-md-6 menu-grids">
-										<div class="menu-text">
-											<div class="menu-text-left">
-												<h4>Arcu pede enim justo.</h4>
-												<h6>Tuna, Sweetcorn, Cheese.</h6>
-											</div>
-											<div class="menu-text-midle">
-												<span class="line"></span>
-											</div>
-											<div class="menu-text-right">
-												<h4>$50</h4>
-											</div>
-											<div class="clearfix"> </div>
-										</div>	
-										<div class="menu-text">
-											<div class="menu-text-left">
-												<h4>Cras dapibussemper nisi.</h4>
-												<h6>Pineapple, Minced Beef, Cheese.</h6>
-											</div>
-											<div class="menu-text-midle">
-												<span class="line"> </span>
-											</div>
-											<div class="menu-text-right">
-												<h4>$62</h4>
-											</div>
-											<div class="clearfix"> </div>
-										</div>
-										<div class="menu-text">
-											<div class="menu-text-left">
-												<h4>Quam semper libero.</h4>
-												<h6>Cheese, tomato, mushrooms, onions.</h6>
-											</div>
-											<div class="menu-text-midle">
-												<span class="line"> </span>
-											</div>
-											<div class="menu-text-right">
-												<h4>$25</h4>
-											</div>
-											<div class="clearfix"> </div>
-										</div>
-										<div class="menu-text">
-											<div class="menu-text-left">
-												<h4>Nam eget dui Etiam.</h4>
-												<h6>Chicken, mozzarella cheese, onions.</h6>
-											</div>
-											<div class="menu-text-midle">
-												<span class="line"> </span>
-											</div>
-											<div class="menu-text-right">
-												<h4>$30</h4>
-											</div>
-											<div class="clearfix"> </div>
-										</div>
-									</div>
-									<div class="clearfix"> </div>
-								</div>
-							</div>
-						</li>
-						<li><div class="l_g">
-								<div class="l_g_r g_r">
-									<div class="col-md-6 menu-grids">
-										<div class="menu-text">
-											<div class="menu-text-left">
-												<h4>Voluptate cillum fugiat.</h4>
-												<h6>Cheese, tomato, mushrooms, onions.</h6>
-											</div>
-											<div class="menu-text-midle">
-												<span class="line"> </span>
-											</div>
-											<div class="menu-text-right">
-												<h4>$50</h4>
-											</div>
-											<div class="clearfix"> </div>
-										</div>	
-										<div class="menu-text">
-											<div class="menu-text-left">
-												<h4>Metus varius laoreet.</h4>
-												<h6>Chicken, mozzarella cheese, onions.</h6>
-											</div>
-											<div class="menu-text-midle">
-												<span class="line"> </span>
-											</div>
-											<div class="menu-text-right">
-												<h4>$62</h4>
-											</div>
-											<div class="clearfix"> </div>
-										</div>
-										<div class="menu-text">
-											<div class="menu-text-left">
-												<h4>Donec sodales magna.</h4>
-												<h6>Tuna, Sweetcorn, Cheese.</h6>
-											</div>
-											<div class="menu-text-midle">
-												<span class="line"> </span>
-											</div>
-											<div class="menu-text-right">
-												<h4>$25</h4>
-											</div>
-											<div class="clearfix"> </div>
-										</div>
-										<div class="menu-text">
-											<div class="menu-text-left">
-												<h4>Saugue velit cursus.</h4>
-												<h6>Pineapple, Minced Beef, Cheese.</h6>
-											</div>
-											<div class="menu-text-midle">
-												<span class="line"> </span>
-											</div>
-											<div class="menu-text-right">
-												<h4>$30</h4>
-											</div>
-											<div class="clearfix"> </div>
-										</div>
-									</div>
-									<div class="col-md-6 menu-grids">
-										<div class="menu-text">
-											<div class="menu-text-left">
-												<h4>Arcu pede enim justo.</h4>
-												<h6>Tuna, Sweetcorn, Cheese.</h6>
-											</div>
-											<div class="menu-text-midle">
-												<span class="line"> </span>
-											</div>
-											<div class="menu-text-right">
-												<h4>$50</h4>
-											</div>
-											<div class="clearfix"> </div>
-										</div>	
-										<div class="menu-text">
-											<div class="menu-text-left">
-												<h4>Cras dapibussemper nisi.</h4>
-												<h6>Pineapple, Minced Beef, Cheese.</h6>
-											</div>
-											<div class="menu-text-midle">
-												<span class="line"> </span>
-											</div>
-											<div class="menu-text-right">
-												<h4>$62</h4>
-											</div>
-											<div class="clearfix"> </div>
-										</div>
-										<div class="menu-text">
-											<div class="menu-text-left">
-												<h4>Quam semper libero.</h4>
-												<h6>Cheese, tomato, mushrooms, onions.</h6>
-											</div>
-											<div class="menu-text-midle">
-												<span class="line"> </span>
-											</div>
-											<div class="menu-text-right">
-												<h4>$25</h4>
-											</div>
-											<div class="clearfix"> </div>
-										</div>
-										<div class="menu-text">
-											<div class="menu-text-left">
-												<h4>Nam eget dui Etiam.</h4>
-												<h6>Chicken, mozzarella cheese, onions.</h6>
-											</div>
-											<div class="menu-text-midle">
-												<span class="line"> </span>
-											</div>
-											<div class="menu-text-right">
-												<h4>$30</h4>
-											</div>
-											<div class="clearfix"> </div>
-										</div>
-									</div>
-									<div class="clearfix"> </div>
-								</div>	
-							</div>	
-						</li>
-					</ul>
-					<div id="loadMore">Load more</div>
-					<div id="showLess">Show less</div>
-				</div>
-			</div>
-		</div>
-		<!--menu结束-->
 		<!-- testimonial -->
 		<div class="testimonial">
 			<!-- container -->
 			<div class="container">
-				<h3 class="title">Feedback About us</h3>
+				<h3 class="title">评论</h3>
 				<div  id="top" class="callbacks_container">
 					<ul class="rslides" id="slider3">
 						<li>
@@ -609,9 +195,8 @@
 									<img src="/img/t1.jpg" alt="" />
 								</div>
 								<div class="testimonial-right">
-									<h5>Mary Wilson</h5>
-									<p><span>"</span> Lorem ipsum dolor sit amet consec tetuer adi piscing elit Praesent vestibulum 
-										molestie lacus consec tetuer adi piscing elit Praesent vestibulum molestie lacus <span>"</span>
+									<h5>张丹</h5>
+									<p><span>"</span> 好吃!好吃!好吃!<span>"</span>
 									</p>
 								</div>
 								<div class="clearfix"> </div>
@@ -623,9 +208,8 @@
 									<img src="/img/t3.jpg" alt="" />
 								</div>
 								<div class="testimonial-right">
-									<h5>Lora  Alance</h5>
-									<p><span>"</span> Lorem ipsum dolor sit amet consec tetuer adi piscing elit Praesent vestibulum 
-										molestie lacus consec tetuer adi piscing elit Praesent vestibulum molestie lacus <span>"</span>
+									<h5>李雪</h5>
+									<p><span>"</span> 好吃!好吃!好吃! <span>"</span>
 									</p>
 								</div>
 								<div class="clearfix"> </div>
@@ -634,12 +218,11 @@
 						<li>
 							<div class="testimonial-grids">
 								<div class="testimonial-left">
-									<img src="/img/t2.jpg" alt="" />
+									<img src="/img/t1.jpg" alt="" />
 								</div>
 								<div class="testimonial-right">
-									<h5>David Smith</h5>
-									<p><span>"</span> Lorem ipsum dolor sit amet consec tetuer adi piscing elit Praesent vestibulum 
-										molestie lacus consec tetuer adi piscing elit Praesent vestibulum molestie lacus <span>"</span>
+									<h5>窦亚楠</h5>
+									<p><span>"</span>  好吃!好吃!好吃!<span>"</span>
 									</p>
 								</div>
 								<div class="clearfix"> </div>
@@ -699,4 +282,20 @@
 		<!--//footer-->
 	<script src="/socket.io/socket.io.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" src="http://localhost:3000/js/index1-bundle.js"></script></body>
+	<script type="text/javascript">
+		var app = angular.module('app',[]);
+		app.controller('cro',['$scope','$http',function($scope,$http){
+			$scope.xuanZe=function($event){	
+				var sortName = $($($event.currentTarget).next())[0].innerText;
+				var url = '/index1/selectSort';
+				console.log(sortName);
+				var data = {sortName:sortName};
+				$http.post(url,data).then(function(result){
+					console.log(result.data.sort);
+					$scope.list = result.data.sort;
+				})
+			}
+			
+		}])
+	</script>
 </html>

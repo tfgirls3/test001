@@ -15,45 +15,115 @@
 			<div class="main-left col-md-2">
 				<nav class="nav nav-tabs">				
 					<ul class="nav nav-stacked" style="clear: both;">						
-						<li><a href="#a1" data-toggle="tab">一号桌</a></li>					
-						<li><a href="#a2" data-toggle="tab">二号桌</a></li>					
-						<li><a href="#a3" data-toggle="tab">三号桌</a></li>					
-						<li><a href="#a4" data-toggle="tab">四号桌</a></li>					
-						<li><a href="#a5" data-toggle="tab">五号桌</a></li>
+						<li ng-click="xuanZe($event)"><a href="#a1" data-toggle="tab">01</a></li>					
+						<li ng-click="xuanZe($event)"><a href="#a2" data-toggle="tab">02</a></a></li>					
+						<li ng-click="xuanZe($event)"><a href="#a3" data-toggle="tab">03</a></li>					
+						<li ng-click="xuanZe($event)"><a href="#a4" data-toggle="tab">04</a></li>					
+						<li ng-click="xuanZe($event)"><a href="#a5" data-toggle="tab">05</a></li>
+						<li ng-click="xuanZe($event)"><a href="#a6" data-toggle="tab">06</a></li>
+						<li ng-click="xuanZe($event)"><a href="#a7" data-toggle="tab">07</a></li>
 					</ul>				
 				</nav>				
 			</div>
 			<div class="main-right">
 				<div class="tab-content">
-					<div class="tab-pane fade in active" id="a1">
+					<div class="tab-pane fade in active tabs" id="a1">
 						<table class="table table-hover table-condensed">
 							<tr>
-								<td>ORDER</td>
 								<td>NAME</td>
 								<td>PICTURE</td>
-								<td>NUMBER</td>
 								<td>STATE</td>
 							</tr>
-							<tr ng-repeat="x in list">
-								<td>{{x.middle_id}}</td>
+							<tr ng-repeat="x in list" id="{{x.seat_id}}">
 								<td>{{x.menu_name}}</td>
 								<td><img ng-src="{{x.img}}"/></td>
-								<td><span>{{x.num}}</span></td>
-								<td><button class="btn btn-default btns" ng-click="deleteTr()">完成</button></td>
+								<td><input type="button" class="btn btn-default btns" ng-click="deleteTr()" value="完成"></td>
 							</tr>							
 						</table>
 					</div>
-					<div class="tab-pane" id="a2">
-						第二页
+					<div class="tab-pane" id="a1">
+						<table class="table table-hover table-condensed">
+							<tr>
+								<td>NAME</td>
+								<td>PICTURE</td>
+								<td>STATE</td>
+							</tr>
+							<tr ng-repeat="x in list" id="{{x.seat_id}}">
+								<td>{{x.menu_name}}</td>
+								<td><img ng-src="{{x.img}}"/></td>
+								<td><input type="button" class="btn btn-default btns" ng-click="deleteTr()" value="完成"></td>
+							</tr>							
+						</table>
 					</div>
-					<div class="tab-pane" id="a3">
-						第三页
+					<div class="tab-pane" id="a1">
+						<table class="table table-hover table-condensed">
+							<tr>
+								<td>NAME</td>
+								<td>PICTURE</td>
+								<td>STATE</td>
+							</tr>
+							<tr ng-repeat="x in list" id="{{x.seat_id}}">
+								<td>{{x.menu_name}}</td>
+								<td><img ng-src="{{x.img}}"/></td>
+								<td><input type="button" class="btn btn-default btns" ng-click="deleteTr()" value="完成"></td>
+							</tr>							
+						</table>
 					</div>
-					<div class="tab-pane" id="a4">
-						第四页
+					<div class="tab-pane" id="a1">
+						<table class="table table-hover table-condensed">
+							<tr>
+								<td>NAME</td>
+								<td>PICTURE</td>
+								<td>STATE</td>
+							</tr>
+							<tr ng-repeat="x in list" id="{{x.seat_id}}">
+								<td>{{x.menu_name}}</td>
+								<td><img ng-src="{{x.img}}"/></td>
+								<td><input type="button" class="btn btn-default btns" ng-click="deleteTr()" value="完成"></td>
+							</tr>							
+						</table>
 					</div>
-					<div class="tab-pane" id="a5">
-						第五页
+					<div class="tab-pane" id="a1">
+						<table class="table table-hover table-condensed">
+							<tr>
+								<td>NAME</td>
+								<td>PICTURE</td>
+								<td>STATE</td>
+							</tr>
+							<tr ng-repeat="x in list" id="{{x.seat_id}}">
+								<td>{{x.menu_name}}</td>
+								<td><img ng-src="{{x.img}}"/></td>
+								<td><input type="button" class="btn btn-default btns" ng-click="deleteTr()" value="完成"></td>
+							</tr>							
+						</table>
+					</div>	
+					<div class="tab-pane" id="a1">
+						<table class="table table-hover table-condensed">
+							<tr>
+								<td>NAME</td>
+								<td>PICTURE</td>
+								<td>STATE</td>
+							</tr>
+							<tr ng-repeat="x in list" id="{{x.seat_id}}">
+								<td>{{x.menu_name}}</td>
+								<td><img ng-src="{{x.img}}"/></td>
+								<td><input type="button" class="btn btn-default btns" ng-click="deleteTr()" value="完成"></td>
+							</tr>							
+						</table>
+					</div>	
+					<div class="tab-pane" id="a1">
+						<table class="table table-hover table-condensed">
+							<tr>
+								<td>NAME</td>
+								<td>PICTURE</td>
+								<td>STATE</td>
+							</tr>
+							<tr ng-repeat="x in list" id="{{x.seat_id}}">
+								<td>{{x.menu_name}}</td>
+								<td><img ng-src="{{x.img}}"/></td>
+								<td><input type="button" class="btn btn-default btns" ng-click="deleteTr()" value="完成"></td>
+							</tr>							
+						</table>
 					</div>	
 				</div>			
 			</div>
@@ -63,22 +133,28 @@
 	<script type="text/javascript">
 		var app = angular.module('app',[]);
 		app.controller('cro',['$scope','$http',function($scope,$http){
-			var url = '/kitchen/selectList';
-			var data = {};
-			$http.post(url,data).then(function(result){
-				console.log(result.data.list);
-				$scope.list=result.data.list;
-			})
-			$scope.deleteTr=function(){
-				alert($(this).index());
-//				if($('.btns').html()=='完成'){					
-//					$('.btns').parent().parent().css('background-color','black');
-//					$('.btns').html('已完成');
-//				}else{
-//					$('.btns').parent().parent().css('background-color','');
-//					$('.btns').html('完成');
-//				}
+			$scope.xuanZe=function($event){
+				var seatId = $($($event.currentTarget).children())[0].innerText;
+				$('.tab-content').css('display','block');
+				var url = '/kitchen/selectList';
+				var data = {seatId:seatId};
+				$http.post(url,data).then(function(result){
+					$scope.list=result.data.list;
+				})
 			}
+			$scope.deleteTr=function(){
+				var index = $(this)[0].$index;
+				console.log(index);
+				console.log($('.btns')[index]);
+				if($($('.btns')[index]).val()=='完成'){					
+					$($('.btns')[index]).parent().parent().css('background-color','gray');
+					$($('.btns')[index]).val("已完成");
+				}else{
+					$($('.btns')[index]).parent().parent().css('background-color','');
+					$($('.btns')[index]).val("完成");
+				}
+			}
+
 		}])
 	</script>
 </html>

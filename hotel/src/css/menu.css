@@ -1,5 +1,5 @@
-body{
-	background-image: url(/img/banner2.jpg);
+body{	
+	background-image: url(/img/背景.jpg);
 	background-size: 100%;
 }
 a{
@@ -19,11 +19,18 @@ ul{
 	margin-left: 45%;
 }
 #myTab {
-	margin-left: 20px;
+	height : 40px;
+	margin-left: 6px;
+	font-family: "华文隶书";
+	font-size: 22px;
 }
 #myTab a{
 	text-decoration: none;
 	color: white;
+}
+#myTabContent{
+	margin-left:50px;
+	margin-top : 30px;
 }
 .nav-tabs > li.active > a:focus {
     color: #555555!important;
@@ -34,38 +41,175 @@ ul{
 .tab-content > .active {
  display: block;
 }
+.tab-pane > div{
+	width: 150px;
+	height: 180px;
+	display: inline-block;
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+	font-family: "华文隶书";
+}
 .main{
 	width:100%;
 	margin-left: 20px;
 	display: flex;
 }
+.main .main-left .tu{
+	position :relative;
+}
+.main .main-left .tu span{
+	position: absolute;
+	left: 100px;
+	top: 74px;
+}
 .main .main-left img{
 	width: 100px;
 	height: 100px;
-	margin-top: 30px;
+	margin: auto;
 }
 .main .main-left{
-	width: 65%;
-	display: flex;
-	justify-content: space-around;
-	flex-shrink: 0;
-	flex-wrap: wrap;
+	width: 60%;
 	margin-right: 20px;
 }
-.main .main-left label{
-	width: 20%;
-	text-align: center;
+.main .main-left .banner{
+	width: 100%;
+	margin-top: 30px;
+	animation-name: diao;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
 }
-.main .main-left input{
-	display: none;
+@keyframes diao{
+	from{transform:translate(0px,-200px);}
+	to{transform:translate(0px,100px);}
+}
+.main .main-left .logo{
+	width: 150px;
+	height: 150px;
+	
+}
+.main .main-left .logo>img{
+	width: 150px;
+	height: 150px;
+	display: inline-block;
+	animation-name: img;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+@-webkit-keyframes img{
+	from{-webkit-transform: translate(0px,-20px) rotateY(0deg);transform: translate(0px,-20px) rotateY(0deg);}
+	to{-webkit-transform: translate(0px,-20px) rotateY(360deg);transform: translate(0px,-20px) rotateY(360deg);}
+}
+.main .main-left .welcome{
+	font-size: 70px;
+	color: #4D4D4D;
+	text-shadow: 5px 5px 3px darkgray;
+	display: inline-block;
+}
+.banner span:nth-child(2){
+    animation-name: tiao;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;	
+    animation-timing-function: linear;		
+}
+.banner span:nth-child(3){
+	animation-name: tiao;
+	animation-iteration-count: infinite;
+	animation-duration: 1s;	
+	animation-delay: 2.3s;
+	animation-timing-function: linear;		
+}
+.banner span:nth-child(4){
+    animation-name: tiao;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;	
+    animation-delay: 2.6s;
+    animation-timing-function: linear;		
+}
+.banner span:nth-child(5){
+    animation-name: tiao;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;	
+    animation-delay: 2.9s;
+    animation-timing-function: linear;		
+}
+.banner span:nth-child(6){
+    animation-name: tiao;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;	
+    animation-delay: 3.2s;
+    animation-timing-function: linear;		
+}
+.banner span:nth-child(7){
+    animation-name: tiao;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;	
+    animation-delay: 3.5s;
+    animation-timing-function: linear;		
+}
+.banner span:nth-child(8){
+    animation-name: tiao;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;	
+    animation-delay: 3.8s;
+    animation-timing-function: linear;		
+}
+.banner span:nth-child(9){
+    animation-name: tiao;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;	
+    animation-delay: 4.1s;
+    animation-timing-function: linear;		
+}
+.banner span:nth-child(10){
+    animation-name: tiao;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;	
+    animation-delay: 4.4s;
+    animation-timing-function: linear;		
+}
+.banner span:nth-child(11){
+    animation-name: tiao;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;	
+    animation-delay: 4.7s;
+    animation-timing-function: linear;		
+}
+.banner span:nth-child(12){
+    animation-name: tiao;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;	
+    animation-delay: 5.0s;
+    animation-timing-function: linear;		
+}
+.banner span:nth-child(13){
+    animation-name: tiao;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;	
+    animation-delay: 5.3s;
+    animation-timing-function: linear;		
+}
+@keyframes tiao{
+	from{transform: translate(0px,0px);}
+	to{transform: translate(0px,-30px);}
 }
 .main .main-right{
-	width: 30%;
+	width: 35%;
 	font-size: 20px;
 	font-weight: bold;
 	font-family: "华文隶书";
 	float: right;
 	margin-top: 36px;
+}
+.main .main-right select{
+	background-color: darkgrey;
+	color:white;
+}
+.main .main-right .total{
+	float:right;
+	display: none;
 }
 .main .main-right table{
 	background-color: #FFFFFF;
@@ -73,5 +217,21 @@ ul{
 }
 .main .main-right table td{
 	text-align: center;
-	
+}
+.toBar{
+	float: right;
+	color: black;
+	display: inline-block;
+	height: 30px;
+	width: 180px;
+	background-color: whitesmoke;
+	text-decoration: none;
+	text-align: center;
+	line-height: 30px;
+	border-radius: 3px;
+	font-family:'华文隶书';
+	font-size: 20px;
+	position: fixed;
+	top: 50px;
+	left:1180px;
 }

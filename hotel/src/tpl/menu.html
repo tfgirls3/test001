@@ -11,116 +11,236 @@
 		<div class="main">
 			<div class="main-left">
 				<ul id="myTab" class="nav nav-pills nav-justified" role="tablist">
-					<li class="active"><a href="#zhuCai" role="tab" data-toggle="tab">主菜</a></li>
-					<li><a href="#zhuShi" role="tab" data-toggle="tab">主食</a></li>
-					<li><a href="#niuPa" role="tab" data-toggle="tab">牛扒</a></li>
-					<li><a href="#nongTang" role="tab" data-toggle="tab">浓汤</a></li>
-					<li><a href="#tianPin" role="tab" data-toggle="tab">甜品</a></li>
-					<li><a href="#shaLa" role="tab" data-toggle="tab">沙拉</a></li>
-					<li><a href="#xiaoShi" role="tab" data-toggle="tab">小食</a></li>
-					<li><a href="#yinPin" role="tab" data-toggle="tab">饮品</a></li>
+					<li class="active"><a data-ng-click="xuanze($event)" href="#zhuCai" role="tab" data-toggle="tab">主菜</a></li>
+					<li><a data-ng-click="xuanze($event)" href="#zhuShi" role="tab" data-toggle="tab">主食</a></li>
+					<li><a data-ng-click="xuanze($event)" href="#niuPa" role="tab" data-toggle="tab">牛扒</a></li>
+					<li><a data-ng-click="xuanze($event)" href="#nongTang" role="tab" data-toggle="tab">浓汤</a></li>
+					<li><a data-ng-click="xuanze($event)" href="#tianPin" role="tab" data-toggle="tab">甜品</a></li>
+					<li><a data-ng-click="xuanze($event)" href="#shaLa" role="tab" data-toggle="tab">沙拉</a></li>
+					<li><a data-ng-click="xuanze($event)" href="#xiaoShi" role="tab" data-toggle="tab">小食</a></li>
+					<li><a data-ng-click="xuanze($event)" href="#yinPin" role="tab" data-toggle="tab">饮品</a></li>
 				</ul>
 				<div id="myTabContent" class="tab-content">				
 					<div class="tab-pane active" id="zhuCai" >
-						<template v-for="cai in list">
-							<label v-bind:for="'a'+cai.index" >
-								<input type="checkbox" name="caiming" v-bind:id="'a'+cai.index" @click="jiSuan(cai.index)"  v-bind:value="cai.id" v-model="cai.checked"/>
-								<div>
-									<img v-bind:src="cai.img"/>
-									<p>{{cai.name}}</p>
-									<p>价格:{{cai.sal}}</p>
-								</div>
-							</label>
-						</template>
-						<div id="total">
-							总价:{{total}}
-							<input type="hidden" name="total" id="total" v-bind:value="total" />
+						<div class="banner">
+							<span class="logo">
+								<!--<img src="/img/logo.jpg" alt="" />-->
+							</span>
+							<span class="welcome">W</span>
+							<span class="welcome">e</span>
+							<span class="welcome">l</span>
+							<span class="welcome">c</span>
+							<span class="welcome">o</span>
+							<span class="welcome">m</span>
+							<span class="welcome">e</span>&nbsp;&nbsp;&nbsp;
+							<span class="welcome">T</span>
+							<span class="welcome">o</span>&nbsp;&nbsp;&nbsp;
+							<span class="welcome">N*</span>
+							<span class="welcome">N*</span>
+							<span class="welcome">N*</span>
+						</div>
+						<div ng-repeat="x in list">
+							<div>
+								<p class="tu">
+									<img ng-src="{{x.img}}" alt="" />
+									<span ng-click="add($event)"><img style="width:24px;height:24px;" src="/img/加号.png"/></span>
+								</p>
+								<p>{{x.menu_name}}</p>
+								<p class="price">价格:${{x.price}}</p>
+								<input class="hidden" value="{{x.menu_id}}" />
+							</div>
 						</div>
 					</div>
 					<div class="tab-pane" id="zhuShi">
-						<template v-for="cai1 in list">
-							<label v-bind:for="'a'+cai1.index" >
-								<input type="checkbox" name="caiming1" v-bind:id="'a'+cai1.index" @click="jiSuan(cai1.index)"  v-bind:value="cai1.id" v-model="cai1.checked"/>
-								<div>
-									<img v-bind:src="cai1.img"/>
-									<p>{{cai1.name}}</p>
-									<p>价格:{{cai1.sal}}</p>
-								</div>
-							</label>
-						</template>
-						<div id="total1">
-							总价:{{total1}}
-							<input type="hidden" name="total1" id="total1" v-bind:value="total1" />
+						<div ng-repeat="x in list">
+							<div>
+								<p class="tu"> 
+									<img ng-src="{{x.img}}" alt="" />
+									<span ng-click="add($event)"><img style="width:24px;height:24px;" src="/img/加号.png"/></span>
+								</p>
+								<p>{{x.menu_name}}</p>
+								<p class="price">价格:${{x.price}}</p>
+								<input class="hidden" value="{{x.menu_id}}" />
+							</div>
 						</div>
 					</div>
 					<div class="tab-pane" id="niuPa">
-						<template v-for="cai2 in list">
-							<label v-bind:for="'a'+cai2.index" >
-								<input type="checkbox" name="caiming2" v-bind:id="'a'+cai2.index" @click="jiSuan(cai2.index)"  v-bind:value="cai2.id" v-model="cai2.checked"/>
-								<div>
-									<img v-bind:src="cai2.img"/>
-									<p>{{cai2.name}}</p>
-									<p>价格:{{cai2.sal}}</p>
-								</div>
-							</label>
-						</template>
-						<div id="total2">
-							总价:{{total2}}
-							<input type="hidden" name="total2" id="total2" v-bind:value="total2" />
+						<div ng-repeat="x in list">
+							<div>
+								<p class="tu">
+									<img ng-src="{{x.img}}" alt="" />
+									<span ng-click="add($event)"><img style="width:24px;height:24px;" src="/img/加号.png"/></span>
+								</p>
+								<p>{{x.menu_name}}</p>
+								<p class="price">价格:${{x.price}}</p>
+								<input class="hidden" value="{{x.menu_id}}" />
+							</div>
 						</div>
 					</div>
-						<div class="tab-pane" id="nongTang">hh1</div>
-						<div class="tab-pane" id="tianPin">dd</div>
-						<div class="tab-pane" id="shaLa">ww</div>
-						<div class="tab-pane" id="xiaoShi">ww</div>
-						<div class="tab-pane" id="yinPin">ww</div>
+					<div class="tab-pane" id="nongTang">
+						<div ng-repeat="x in list" >
+							<div>
+								<p class="tu">
+									<img ng-src="{{x.img}}" alt="" />
+									<span ng-click="add($event)"><img style="width:24px;height:24px;" src="/img/加号.png"/></span>
+								</p>
+								<p>{{x.menu_name}}</p>
+								<p class="price">价格:${{x.price}}</p>
+								<input class="hidden" value="{{x.menu_id}}" />
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="tianPin">
+						<div ng-repeat="x in list">
+							<div>
+								<p class="tu">
+									<img ng-src="{{x.img}}" alt="" />
+									<span ng-click="add($event)"><img style="width:24px;height:24px;" src="/img/加号.png"/></span>
+								</p>
+								<p>{{x.menu_name}}</p>
+								<p class="price">价格:${{x.price}}</p>
+								<input class="hidden" value="{{x.menu_id}}" />
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="shaLa">
+						<div ng-repeat="x in list">
+							<div>
+								<p class="tu">
+									<img ng-src="{{x.img}}" alt="" />
+									<span ng-click="add($event)"><img style="width:24px;height:24px;" src="/img/加号.png"/></span>
+								</p>
+								<p>{{x.menu_name}}</p>
+								<p class="price">价格:${{x.price}}</p>
+								<input class="hidden" value="{{x.menu_id}}" />
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="xiaoShi">
+						<div ng-repeat="x in list">
+							<div>
+								<p class="tu">
+									<img ng-src="{{x.img}}" alt="" />
+									<span ng-click="add($event)"><img style="width:24px;height:24px;" src="/img/加号.png"/></span>
+								</p>
+								<p>{{x.menu_name}}</p>
+								<p class="price">价格:${{x.price}}</p>
+								<input class="hidden" value="{{x.menu_id}}" />
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="yinPin">
+							<div ng-repeat="x in list">
+								<div>
+									<p class="tu">
+										<img ng-src="{{x.img}}" alt="" />
+										<span  ng-click="add($event)"><img style="width:24px;height:24px;" src="/img/加号.png"/></span>
+									</p>
+									<p>{{x.menu_name}}</p>
+									<p class="price">价格:${{x.price}}</p>
+									<input class="hidden" value="{{x.menu_id}}" />
+								</div>
+							</div>
+						</div>
 				</div>
 			</div>
 			<div class="tab-content main-right" id="already">
-				<div class="tab-pane fade in active" id="a1">
+				<div class="tab-pane fade in active">
 					<table class="table table-hover table-condensed">
-						<tr>
+						<tr class="title">
 							<td>ORDER</td>
 							<td>NAME</td>
-							<td>NUMBER</td>
 							<td>PRICE</td>
 						</tr>
-						<tr>
-							<td>1</td>
-							<td>俄式土豆泥</td>
-							<td><a href="#">1</a></td>
-							<td>$28.00</td>
-						</tr>
-						<tr>
-							<td>2</td>
-							<td>俄式烤奶汁杂拌</td>
-							<td><a href="#">2</a></td>
-							<td>$28.00</td>
-						</tr>
-						<tr>
-							<td>3</td>
-							<td>俄式酥炸大虾</td>
-							<td><a href="#">3</a></td>
-							<td>$28.00</td>
-						</tr>
-						<tr>
-							<td>4</td>
-							<td>咖喱牛肉烩饭</td>
-							<td><a href="#">2</a></td>
-							<td>$28.00</td>
-						</tr>
-						<tr>
-							<td>total :</td>
-							<td colspan="3">$888.00</td>
-						</tr>
-						<tr>
-							<td>seat :</td>
-							<td colspan="3">01</td>
-						</tr>
 					</table>
+					<span>
+						<select class="seat">
+							<option value="01">01号桌</option>
+							<option value="02">02号桌</option>
+							<option value="03">03号桌</option>
+							<option value="04">04号桌</option>
+							<option value="05">05号桌</option>
+							<option value="06">06号桌</option>
+							<option value="07">07号桌</option>
+							<option value="08">08号桌</option>
+							<option value="09">09号桌</option>
+							<option value="10">10号桌</option>
+						</select>
+					</span>
+					<span class="total">
+						总价:${{total}}.00
+						<button data-ng-click="send($event)" class="btn btn-info">提交订单</button>
+					</span>
 				</div>
 			</div>
 		</div>
+		<span><a class="toBar" href="bar">吧台专用链接GO!</a></span>
 		<script src="/socket.io/socket.io.js" type="text/javascript" charset="utf-8"></script>
 	</body>
+	<script type="text/javascript">
+		var app = angular.module('app',[]);
+		app.controller('con',['$scope','$http',function($scope,$http){
+		    $scope.xuanze=function($event){
+		    	$(".banner").css('display','none');
+		    	var url = '/menu/selectCaiBySort';
+				var sortName = '';
+		        sortName = $event.currentTarget.text;
+		        data = {sortName:sortName};
+			    $http.post(url,data).then(function(result){
+					$scope.list=result.data.list;
+				})
+	        }
+		    var indexs = [];
+		    $scope.names= [];
+		    $scope.prices = [];
+		    $scope.menuIds = [];
+		    $scope.add=function($event){
+		    	$('.total').css('display','block');
+		    	nameStr= $($($event.currentTarget).parent()).next();
+		    	$scope.name = nameStr[0].innerHTML;
+		    	var next  = nameStr.next();
+		    	var priceStr = next[0].innerHTML;  	
+		    	var priceArr = priceStr.split('$');
+		    	$scope.price = priceArr[1];
+		    	var next2 = next.next();
+		    	$scope.menuId = $(next2[0]).val();
+		    	($scope.names).push($scope.name);
+		    	($scope.prices).push($scope.price);
+		    	($scope.menuIds).push($scope.menuId);
+		    	$($($('.title')).siblings()).remove();
+		    	$scope.total = 0;
+		    	for(var i=0; i<$($scope.names).length;i++){
+		    		var pricesStr = $($scope.prices)[i];
+		    		var price = parseInt(pricesStr);
+		    		$scope.total = price + $scope.total;
+		    		$($($('.title')).parent()).append(
+			    		'<tr>'+
+			    			'<td>'+(i+1)+'</td>'+
+			    			'<td>'+$($scope.names)[i]+'</td>'+
+			    			'<td>'+'$'+$($scope.prices)[i]+'</td>'+
+			    		'</tr>'
+			    	);
+		    	}
+		    }
+		    $scope.send = function($event){
+		    	var seatStr = $('.seat option:selected').text();
+				var seatArr = seatStr.split("号",1);
+				var seatId = seatArr[0];
+		    	var url = '/menu/addOrder';
+				var date = new Date();
+				var year = date.getFullYear(); 
+				var mon = date.getMonth()+1; 
+				var day = date.getDate();
+				var hour = date.getHours();
+				var min = date.getMinutes(); 
+				var sec = date.getSeconds(); 
+				var date=year+"-"+mon+"-"+day+" "+hour+":"+min+":"+sec;
+				var data = {seatId:seatId,total:$scope.total,pay:0,date:date,menuIds:$scope.menuIds};
+			    $http.post(url,data).then(function(result){
+					$scope.list=result.data.list;
+				})
+			    location.reload();
+		    }
+		}])
+	</script>
 </html>

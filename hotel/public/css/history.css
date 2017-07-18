@@ -1,5 +1,5 @@
 body{
-	background-image: url(/img/banner2.jpg);
+	background-image: url(/img/背景.jpg);
 	background-size: 100%;
 }
 a{
@@ -18,97 +18,10 @@ ul{
 	font-family: -webkit-pictograph;
 	margin-left: 45%;
 }
-.accordion {
- 	width: 70%;
- 	margin: auto;
- 	background: #FFF;
- 	border-radius: 4px;
- 	padding-left: 0;
- 	/*display: flex;*/
- }
-.accordion .link {
-	width: 100%;
-	cursor: pointer;
-	display: block;
-	padding: 15px 15px 15px 15px;
-	color: #4D4D4D;
-	font-size: 14px;
-	font-weight: 700;
-	border-bottom: 1px solid #CCC;
-	position: relative;
-	-webkit-transition: all 0.4s ease;
-	transition: all 0.4s ease;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
- 	-ms-flex-pack: distribute;
- 	    justify-content: space-around;
- 	-ms-flex-negative: 0;
- 	    flex-shrink: 0;
- 	-webkit-box-flex: 0;
- 	    -ms-flex-positive: 0;
- 	        flex-grow: 0;
-}
-.accordion li:last-child .link {
-	border-bottom: 0;
-}
-.accordion li i {
-	position: absolute;
-	top: 16px;
-	left: 12px;
-	font-size: 18px;
-	color: #595959;
-	-webkit-transition: all 0.4s ease;
-	transition: all 0.4s ease;
-}
-.accordion li i.fa-chevron-down {
-	right: 12px;
-	left: auto;
-	font-size: 16px;
-}
-.accordion li.open .link {
-	color: #b63b4d;
-}
-.accordion li.open i {
-	color: #b63b4d;
-}
-.accordion li.open i.fa-chevron-down {
-	-webkit-transform: rotate(180deg);
-	transform: rotate(180deg);
-}
-.accordion li span{
-	display: inline-block;
-}
- .submenu {
- 	display: none;
- 	background: #444359;
- 	font-size: 14px;
- }
- .submenu li {
- 	border-bottom: 1px solid #4b4a5e;
- }
- .submenu a {
- 	display: block;
- 	text-decoration: none;
- 	color: #d9d9d9;
- 	padding: 12px;
- 	padding-left: 42px;
- 	-webkit-transition: all 0.25s ease;
- 	transition: all 0.25s ease;
- }
- .submenu a:hover {
- 	background: #b63b4d;
- 	color: #FFF;
- }
- .date{
- 	font-size: 26px;
- 	font-family: '\534E\6587\96B6\4E66';
- }
-.link>div>span{
+.content{
 	font-size: 20px;
 	font-family: '\534E\6587\96B6\4E66';
-}
-.submenu li a{
-	font-size: 18px;
-	font-family: '\534E\6587\96B6\4E66';
+	font-weight: bold;
+	margin-left: 100px;
+	margin-right: 100px;
 }
